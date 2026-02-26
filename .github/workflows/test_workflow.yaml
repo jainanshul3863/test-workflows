@@ -1,0 +1,17 @@
+name: Test Workflow
+on:
+  pull_request_target:
+    types: [ labeled ]
+  workflow_dispatch:
+
+jobs:
+  test:
+    if: ${{ github.event.label.name == 'label' }}
+    name: Test Workflow
+    runs-on: ubuntu-24.04
+    permissions:
+      id-token: write
+      contents: read
+    steps:
+      - name: Run a simple echo
+        run: echo "Hello from simple workflow"
