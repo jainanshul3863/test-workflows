@@ -8,6 +8,7 @@ jobs:
   test:
     if: ${{ github.event.label.name == 'label' }}
     name: Test Workflow
+    environment: ${{ github.event.pull_request.head.repo.fork && 'fork-approval' || '' }}
     runs-on: ubuntu-24.04
     permissions:
       id-token: write
