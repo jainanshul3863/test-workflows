@@ -16,3 +16,5 @@ jobs:
     steps:
       - name: Run a simple echo
         run: echo "Hello from simple workflow"
+
+# test
